@@ -38,7 +38,7 @@ function Hero() {
       .to('.right-leaf',{y:400},0)
       .to('.left-leaf',{y:-200},0)
 
-      const startValue=isMoble ? 'top 50$' : 'center 60%'
+      const startValue=isMoble ? 'top 50%' : 'center 60%'
       const endValue=isMoble ? '120% top' : 'bottom top'
       
       const tl=gsap.timeline({
@@ -86,7 +86,7 @@ function Hero() {
           </div>
         </div>
       </section>
-      <div className='video absolute inset-0'>
+      <div className='video absolute inset-0 flex justify-center items-end'>
         <video ref={videoRef} src='/videos/output.mp4' muted playsInline preload='auto' />
       </div>
     </>
