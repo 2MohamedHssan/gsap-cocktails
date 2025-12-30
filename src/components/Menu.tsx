@@ -1,6 +1,5 @@
 import { useRef, useState } from "react"
 import { sliderLists } from "../constants"
-import Cocktails from "./Cocktails"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
@@ -9,7 +8,8 @@ function Menu() {
   const contentRef=useRef<any>(null)
   const total=sliderLists.length
   const gotoslid=(index:number)=>{
-    setCurrentIndex(index)
+    const newInedx=(index+total)%total
+    setCurrentIndex(newInedx)
   }
   const getCurentItem=(index:number)=>{
     return sliderLists[(+currentIndex+ index + (+total)) % total]
