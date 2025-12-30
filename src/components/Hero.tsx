@@ -1,9 +1,13 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all'
-import React from 'react'
+import { useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 function Hero() {
+  const videoRef=useRef<any>(null)
+  const isMoble=useMediaQuery({maxWidth:767})
+
   useGSAP(()=>{
     const heroSplit=new SplitText('.title',{type:'chars, words'});
     const praghraphSplit=new SplitText('.subtitle',{type:'lines'})
@@ -34,6 +38,27 @@ function Hero() {
       .to('.right-leaf',{y:400},0)
       .to('.left-leaf',{y:-400},0)
 
+      const startValue=isMoble ? 'top 50$' : 'center 60%'
+      const endValue=isMoble ? '120% top' : 'bottom top'
+      
+      const tl=gsap.timeline({
+        scrollTrigger:{
+          trigger:'video',
+          start:startValue,
+          end:endValue,
+          scrub:true,
+          pin:true,
+        }
+      })
+      
+      if(videoRef.current){
+        videoRef.current.onloadedmetadata=()=>{
+          tl.to(videoRef.current,{  
+            currentTime:videoRef.current.duration
+
+          })
+        }
+      }
 
   },[])
   return (
@@ -61,6 +86,9 @@ function Hero() {
           </div>
         </div>
       </section>
+      <div className='video absolute inset-0'>
+        <video ref={videoRef} src='/videos/output.mp4' muted playsInline preload='auto' />
+      </div>
     </>
   )
 }
