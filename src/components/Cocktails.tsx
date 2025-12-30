@@ -3,6 +3,7 @@ import { cocktailLists, mockTailLists } from '../constants'
 import gsap from 'gsap'
 
 function Cocktails() {
+
   useGSAP(()=>{
     const parallexTimeline=gsap.timeline({
       scrollTrigger:{
@@ -13,14 +14,12 @@ function Cocktails() {
       }
     })
 
-    parallexTimeline.from('#c-left-leaf',{
-      x: -100, y: 100
-    })
-    
-    .from('#c-right-leaf',{
-      x: 100, y: 100
-    })
+    parallexTimeline
+    .from('#c-left-leaf',{ x: -100, y: 100},0)
+    .from('#c-right-leaf',{x: 100, y: 100 },0)
+
   },[])
+
   return (
     <section id='cocktails' className='noisy'>
       <img src="/images/cocktail-left-leaf.png" alt="l-leaf" id='c-left-leaf' />
