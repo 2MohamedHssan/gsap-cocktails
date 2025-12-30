@@ -15,15 +15,15 @@ function Cocktails() {
     })
 
     parallexTimeline
-    .from('#c-left-leaf',{ x: -100, y: 100},0)
-    .from('#c-right-leaf',{x: 100, y: 100 },0)
+    .from('#c-left-leave',{ x: -100, y: 100},0)
+    .from('#c-right-leave',{x: 100, y: 100 },0)
 
   },[])
 
   return (
     <section id='cocktails' className='noisy'>
-      <img src="/images/cocktail-left-leaf.png" alt="l-leaf" id='c-left-leaf' />
-      <img src="/images/cocktail-right-leaf.png" alt="r-leaf" id='c-right-leaf' />
+      <img src="/images/cocktail-left-leave.png" alt="l-leave" id='c-left-leave' />
+      <img src="/images/cocktail-right-leave.png" alt="r-leave" id='c-right-leave' />
       <div className='list'>
         <div className='populer'>
           <h2>Most Populer Cocktails</h2>

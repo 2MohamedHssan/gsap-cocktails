@@ -35,8 +35,8 @@ function Hero() {
         end:'bottom top',
         scrub:true
       }})
-      .to('.right-leaf',{y:400},0)
-      .to('.left-leaf',{y:-200},0)
+      .to('.right-leave',{y:400},0)
+      .to('.left-leave',{y:-200},0)
 
       const startValue=isMoble ? 'top 50%' : 'center 60%'
       const endValue=isMoble ? '120% top' : 'bottom top'
@@ -65,8 +65,8 @@ function Hero() {
     <>
       <section id='hero' className='noisy'>
         <h1 className='title'>MOJITO</h1>
-        <img src="/images/hero-left-leaf.png" alt="left-leaf" className='left-leaf' />
-        <img src="/images/hero-right-leaf.png" alt="right-leaf" className='right-leaf' />
+        <img src="/images/hero-left-leave.png" alt="left-leave" className='left-leave' />
+        <img src="/images/hero-right-leave.png" alt="right-leave" className='right-leave' />
         
         <div className='body'>
           <div className="content">
